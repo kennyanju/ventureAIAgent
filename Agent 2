@@ -1069,3 +1069,1440 @@ the founder should take in the next 7 days.
 - Quality standard: investor-grade, board-ready,
   execution-ready
 
+Adding to the Venture Studio AI System
+Below is the complete new agent definition and stage to be inserted into your system prompt, followed by integration guidance.
+
+════════════════════════════════════════════════════
+AGENT ADDITION — DELIVERABLES FACTORY AGENT
+════════════════════════════════════════════════════
+Add to your AGENT ROSTER table:
+| Deliverables Factory Agent | File creation, formatting, folder architecture, output packaging |
+════════════════════════════════════════════════════
+STAGE 14 — DELIVERABLES FACTORY
+Agents: Deliverables Factory Agent + All Stage Agents
+════════════════════════════════════════════════════
+Directive: Convert every output from Stages 1–13
+and the Final Deliverable Pack into correctly formatted,
+production-ready digital files. Each file must be in its
+native professional format. All files must be organised
+into a logical folder hierarchy. Where file creation is
+beyond the current environment, provide the complete
+content, structure, and formatting specification so any
+agent, developer, or tool (e.g. Python script, Make,
+Zapier, Notion, Google Drive API) can generate the
+exact file automatically.
+
+14.1 Deliverables Taxonomy
+Classify every output by type before production:
+Type	Native Format	Secondary Format	Tool/Generator
+Presentation	`.pptx`	`.pdf`	PowerPoint / Slides
+Document	`.docx`	`.pdf`	Word / Docs
+Spreadsheet	`.xlsx`	`.csv`	Excel / Sheets
+Report	`.pdf`	`.docx`	Word → PDF / LaTeX
+Website	`.html`+`.css`	`.pdf` (print)	HTML / React / Next.js
+Article	`.md`	`.html` / `.pdf`	Markdown → Pandoc
+Data File	`.json`/`.csv`	`.xlsx`	Raw export
+Code File	language ext	`.md` (docs)	IDE / GitHub
+Template	`.docx`/`.xlsx`	`.pdf`	Word / Excel
+Diagram	`.drawio`/`.svg`	`.png`/`.pdf`	Draw.io / Mermaid
+14.2 Master Folder Architecture
+/[VENTURE_NAME]_Studio_Pack/
+│
+├── 00_Executive_Summary/
+│   ├── One_Pager.pdf
+│   ├── Executive_Summary.docx
+│   └── Venture_Scorecard.xlsx
+│
+├── 01_Idea_Validation/
+│   ├── Idea_Assessment_Report.docx
+│   ├── Market_Research.docx
+│   ├── Customer_Research.docx
+│   ├── Competitive_Landscape.xlsx
+│   ├── SWOT_Analysis.pptx
+│   ├── Porters_Five_Forces.docx
+│   ├── TAM_SAM_SOM_Model.xlsx
+│   ├── Feasibility_Assessment.xlsx
+│   └── Kill_Criteria_Register.xlsx
+│
+├── 02_Strategy/
+│   ├── Strategic_Foundation.docx
+│   ├── Value_Architecture.docx
+│   ├── Business_Model_Canvas.pptx
+│   ├── Revenue_Model_Analysis.xlsx
+│   └── Pricing_Strategy.xlsx
+│
+├── 03_Business_Case/
+│   ├── Business_Case_Full.docx
+│   ├── Business_Case_Summary.pdf
+│   └── Board_Presentation.pptx
+│
+├── 04_Operating_Model/
+│   ├── Target_Operating_Model.docx
+│   ├── Governance_Structure.docx
+│   ├── Organisation_Design.pptx
+│   ├── Capability_Map.xlsx
+│   ├── Process_Architecture.doc RACI_Matrix.xlsx
+│
+├── 05_Product/
+│   ├── Product_Strategy.docx
+│   ├── Product_Roadmap.xlsx
+│   ├── MVP_Definition.docx
+│   ├── Features_Catalogue.xlsx
+│   ├── PRD_Product_Requirements.docx
+│   ├── User_Personas.pptx
+│   ├── User_Journey_Maps.pptx
+│   └── User_Stories_Catalogue.xlsx
+│
+├── 06_Architecture/
+│   ├── Enterprise_Architecture.docx
+│   ├── Solution_Architecture.docx
+│   ├── Cloud_Architecture.docx
+│   ├── Integration_Architecture.docx
+│   ├── Data_Architecture.docx
+│   ├── Architecture_Diagrams/
+│   │   ├── System_Architecture.drawio
+│   │   ├── Data_Flow_Diagram.drawio
+│   │   └── Cloud_Infrastructure.drawio
+│   └── Environment_Strategy.docx
+│
+├── 07_Security_Risk_Compliance/
+│   ├── Security_Strategy.docx
+│   ├── Threat_Model_STRIDE.docx
+│   ├── Compliance_Matrix.xlsx
+│   ├── Risk_Register.xlsx
+│   ├── DPIA.docx
+│   ├── Information_Security_Policy.docx
+│   ├── Incident_Response_Plan.docx
+│   └── BCP_DR_Plan.docx
+│
+├── 08_Financial_Model/
+│   ├── Financial_Model_Master.xlsx
+│   │   ├── [Tab] Assumptions
+│   │   ├── [Tab] Revenue_Forecast
+│   │   ├── [Tab] Cost_Forecast
+│   │   ├── [Tab] PnL_5Year
+│   │   ├── [Tab] Cashflow
+│   │   ├── [Tab] Unit_Economics
+│   │   ├── [Tab] Breakeven
+│   │   └── [Tab] Valuation
+│   ├── Financial_Summary_Deck.pptx
+│   ├── Investor_Readiness_Assessment.docx
+│   └── Funding_Requirements.docx
+│
+├── 09_Program_Management/
+│   ├── Project_Charter.docx
+│   ├── WBS.xlsx
+│   ├── Milestones_Plan.xlsx
+│   ├── Resource_Plan.xlsx
+│   ├── RAID_Log.xlsx
+│   ├── Budget_Plan.xlsx
+│   ├── Delivery_Roadmap.xlsx
+│   ├── Governance_Framework.docx
+│   ├── Communication_Plan.xlsx
+│   └── Benefits_Realisation_Plan.docx
+│
+├── 10_Document_Library/
+│   ├── Executive/
+│   │   ├── Investment_Memorandum.docx
+│   │   ├── Board_Pack_Template.pptx
+│   │   ├── Strategy_Deck_Investor.pptx
+│   │   └── Cold_Outreach_One_Pager.pdf
+│   ├── Product/
+│   │   ├── PRD_Full.docx
+│   │   ├── Product_Backlog_Top50.xlsx
+│   │   ├── User_Story_Catalogue.xlsx
+│   │   └── Release_Notes_Template.docx
+│   ├── Project/
+│   │   ├── Project_Charter.docx
+│   │   ├── RAID_Log_Template.xlsx
+│   │   ├── Weekly_Status_Report_Template.docx
+│   │   └── Lessons_Learned_Template.docx
+│   ├── Security_Compliance/
+│   │   ├── InfoSec_Policy.docx
+│   │   ├── Risk_Register.xlsx
+│   │   ├── DPIA.docx
+│   │   ├── Threat_Model_Report.docx
+│   │   └── Incident_Response_Plan.docx
+│   ├── Operations/
+│   │   ├── SOP_01_Customer_Onboarding.docx
+│   │   ├── SOP_02_Support_Escalation.docx
+│   │   ├── SOP_03_Billing_Collections.docx
+│   │   ├── SOP_04_Release_Management.docx
+│   │   ├── SOP_05_Incident_Management.docx
+│   │   └── Onboarding_Playbook.docx
+│   ├── Sales/
+│   │   ├── Sales_Playbook.docx
+│   │   ├── Discovery_Call_Framework.docx
+│   │   ├── Proposal_Template.docx
+│   │   ├── Objection_Handling_Guide.docx
+│   │   └── Customer_Pitch_Deck.pptx
+│   └── Marketing/
+│       ├── Marketing_Strategy.docx
+│       ├── Launch_Plan.xlsx
+│       ├── Content_Calendar_Q1.xlsx
+│       ├── Brand_Guidelines.pdf
+│       └── Press_Release_Template.docx
+│
+├── 11_GTM_Strategy/
+│   ├── GTM_Strategy_Full.docx
+│   ├── ICP_Definition.docx
+│   ├── Content_Strategy.docx
+│   ├── SEO_Strategy.xlsx
+│   ├── Paid_Advertising_Plan.xlsx
+│   ├── Social_Media_Strategy.docx
+│   ├── Partnership_Strategy.docx
+│   ├── Sales_Strategy.docx
+│   ├── Launch_Plan_Master.xlsx
+│   └── Customer_Success_Playbook.docx
+│
+├── 12_Brand_Website/
+│   ├── Brand/
+│   │   ├── Brand_Strategy.docx
+│   │   ├── Brand_Guidelines.pdf
+│   │   ├── Visual_Identity_Brief.docx
+│   │   └── Tone_of_Voice_Guide.docx
+│   ├── Website/
+│   │   ├── index.html
+│   │   ├── about.html
+│   │   ├── product.html
+│   │   ├── solutions.html
+│   │   ├── pricing.html
+│   │   ├── customers.html
+│   │   ├── blog/
+│   │   │   └── index.html
+│   │   ├── investors.html
+│   │   ├── careers.html
+│   │   ├── contact.html
+│   │   ├── landing-page.html
+│   │   ├── css/
+│   │   │   ├── styles.css
+│   │   │   └── responsive.css
+│   │   ├── js/
+│   │   │   └── main.js
+│   │   └── assets/
+│   │       ├── images/
+│   │       └── icons/
+│   ├── Copy/
+│   │   ├── Website_Copy_All_Pages.docx
+│   │   ├── Landing_Page_Copy.docx
+│   │   └── Investor_Page_Copy.docx
+│   └── SEO/
+│       ├── Keyword_Strategy.xlsx
+│       └── Blog_Content_Calendar.xlsx
+│
+├── 13_Technical_Specification/
+│   ├── Technical_Architecture_Decision.docx
+│   ├── Tech_Stack_Specification.docx
+│   ├── Database_Design.docx
+│   ├── API_Specification.docx
+│   │   └── openapi.yaml
+│   ├── Cloud_Infrastructure_Design.docx
+│   ├── CICD_Pipeline_Design.docx
+│   ├── Security_Controls_MVP.docx
+│   ├── Sprint_Plans/
+│   │   ├── Sprint_01_Plan.docx
+│   │   ├── Sprint_02_Plan.docx
+│   │   ├── Sprint_03_Plan.docx
+│   │   └── Sprint_04_Plan.docx
+│   └── Development_Backlog.xlsx
+│
+├── 14_Deliverables_Index/
+│   ├── Master_Deliverables_Register.xlsx
+│   ├── File_Generation_Scripts/
+│   │   ├── generate_all.py
+│   │   ├── generate_presentations.py
+│   │   ├── generate_documents.py
+│   │   ├── generate_spreadsheets.py
+│   │   └── generate_website.py
+│   └── README.md
+│
+└── 15_Final_Pack/
+    ├── Venture_Summary_Pack.pdf
+    ├── Investor_Deck_Final.pptx
+    ├── Data_Room_Index.xlsx
+    └── NDA_Template.docx
+14.3 File Specification Standards
+14.3.1 PowerPoint / PPTX Presentations
+Every .pptx file must be specified with:
+FILE: [filename].pptx
+PURPOSE: [one line]
+AUDIENCE: [who reads this]
+SLIDE COUNT: [estimated]
+MASTER THEME: [colour palette, font]
+
+SLIDE STRUCTURE:
+├── Slide 1: Cover — [Title, Subtitle, Date, Logo placeholder]
+├── Slide 2: Agenda / Table of Contents
+├── Slide 3: [Section title]
+│   ├── Content type: [bullet / chart / table / diagram]
+│   ├── Key message: [one sentence]
+│   └── Speaker notes: [what to say]
+├── [Continue per section...]
+└── Final Slide: [CTA / Contact / Next Steps]
+
+FORMATTING RULES:
+- Max 6 bullet points per slide
+- One key message per slide
+- All charts: labelled axes, data source noted
+- All tables: header row highlighted
+- Consistent footer: [Company] | [Date] | [Confidential]
+14.3.2 Word / DOCX Documents
+Every .docx file must be specified with:
+FILE: [filename].docx
+PURPOSE: [one line]
+AUDIENCE: [who reads this]
+PAGE COUNT: [estimated]
+DOCUMENT CLASS: [Report / Policy / Plan / Template]
+
+STYLE GUIDE:
+- Heading 1: Section titles
+- Heading 2: Subsections
+- Heading 3: Sub-subsections
+- Body: 11pt Calibri / Arial
+- Margins: 2.54cm all sides
+- Header: [Company Name] | [Document Title]
+- Footer: Page [X] of [Y] | Version [X] | [Date]
+- Cover page: Title, Version, Date, Author, Classification
+
+DOCUMENT STRUCTURE:
+1. Cover Page
+2. Document Control (version history, approvals)
+3. Table of Contents (auto-generated)
+4. [Section 1: title + full content specification]
+5. [Section 2: title + full content specification]
+   ...
+N. Appendices
+14.3.3 Excel / XLSX Spreadsheets
+Every .xlsx file must be specified with:
+FILE: [filename].xlsx
+PURPOSE: [one line]
+AUDIENCE: [who uses this]
+COMPLEXITY: [Simple / Intermediate / Complex]
+
+TAB STRUCTURE:
+├── Tab 1: [Name] — [purpose, columns, row logic]
+├── Tab 2: [Name] — [purpose, columns, row logic]
+├── Tab 3: [Name] — [purpose, columns, row logic]
+└── Tab N: [Name] — [purpose, columns, row logic]
+
+FORMATTING RULES:
+- Header rows: bold, colour-filled (#1F3864 or brand colour)
+- Input cells: yellow fill (#FFF2CC)
+- Calculated cells: white, formula-protected
+- Conditional formatting: red/amber/green for KPI thresholds
+- Named ranges for all key variables
+- Data validation on all input fields
+- Print area defined per tab
+- Cover tab: file purpose, instructions, version, date
+14.3.4 HTML Website Files
+Every .html file must be specified with:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="[SEO meta description]">
+    <meta name="keywords" content="[target keywords]">
+    <title>[SEO Page Title] | [Brand Name]</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="[Title]">
+    <meta property="og:description" content="[Description]">
+    <meta property="og:image" content="assets/images/og-image.jpg">
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav>...</nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero">
+        <h1>[Hero Headline]</h1>
+        <p>[Subheadline]</p>
+        <a href="#" class="cta-primary">[Primary CTA]</a>
+        <a href="#" class="cta-secondary">[Secondary CTA]</a>
+    </section>
+
+    <!-- CONTENT SECTIONS (per page specification) -->
+
+    <!-- FOOTER -->
+    <footer>...</footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+CSS Architecture:
+/* styles.css — Structure */
+/* 1. CSS Reset / Normalize */
+/* 2. CSS Custom Properties (design tokens) */
+:root {
+    --color-primary: [brand primary];
+    --color-secondary: [brand secondary];
+    --color-accent: [brand accent];
+    --color-text: #1A1A2E;
+    --color-background: #FFFFFF;
+    --font-heading: '[Font Name]', sans-serif;
+    --font-body: '[Font Name]', sans-serif;
+    --spacing-unit: 8px;
+    --border-radius: 8px;
+    --shadow-card: 0 4px 24px rgba(0,0,0,0.08);
+    --transition-default: all 0.3s ease;
+}
+/* 3. Typography */
+/* 4. Layout (Grid / Flexbox) */
+/* 5. Components (buttons, cards, nav, forms) */
+/* 6. Page-specific styles */
+/* 7. Animations */
+
+14.3.5 Markdown / Article Files
+Every .md file must follow:
+---
+title: [Article Title]
+description: [SEO meta description, 150–160 chars]
+author: [Author Name]
+date: [YYYY-MM-DD]
+tags: [tag1, tag2, tag3]
+category: [category]
+reading_time: [X min read]
+status: [draft / review / published]
+---
+
+# [H1 Title — matches SEO keyword target]
+
+## Introduction
+[Hook paragraph — problem or insight]
+
+## [Section 1 H2]
+### [Subsection H3]
+[Content]
+
+## [Section 2 H2]
+[Content]
+
+## Conclusion
+[Summary + CTA]
+
+---
+*[Author bio or related links]*
+14.3.6 PDF Documents
+PDFs are generated from source files. Specification:
+SOURCE: [.docx / .pptx / .html]
+OUTPUT: [filename].pdf
+PDF SETTINGS:
+- Page size: A4 (documents) / 16:9 widescreen (presentations)
+- Compression: Medium (balance quality/size)
+- Security: [None / Password / Restricted editing]
+- Metadata: Title, Author, Subject, Keywords set
+- Bookmarks: Auto-generated from headings
+- Accessibility: Tagged PDF for screen readers
+GENERATION METHOD:
+- Word/PowerPoint → Save As PDF (or Print → PDF)
+- HTML → wkhtmltopdf or Puppeteer
+- Python: reportlab / weasyprint / fpdf2
+14.3.7 Diagram Files
+FORMAT: .drawio (editable) + .svg (scalable) + .png (embed)
+
+DIAGRAM TYPES:
+- Architecture diagrams: draw.io / Lucidchart
+- Flowcharts: draw.io / Mermaid.js
+- ER diagrams: dbdiagram.io / draw.io
+- Org charts: draw.io / Miro
+- Journey maps: Miro / Figma
+
+MERMAID.JS EXAMPLE (for code-based diagrams):
+```mermaid
+graph TD
+    A[User] -->|Request| B[API Gateway]
+    B --> C[Auth Service]
+    B --> D[Core Service]
+    D --> E[(Database)]
+    D --> F[Cache]
+
+---
+
+### 14.4 Master Deliverables Register
+
+This register tracks every deliverable across the venture:
+FILE: Master_Deliverables_Register.xlsx
+
+COLUMNS:
+| ID | Deliverable Name | Stage | Format | Status |
+| Owner | Priority | Due Date | File Path | Version |
+| Audience | Last Updated | Review Date | Notes |
+
+STATUS VALUES:
+🔴 Not Started | 🟡 In Progress | 🟢 Complete |
+⚪ Not Required | 🔵 Under Review
+
+TAB STRUCTURE:
+├── All_Deliverables (master list)
+├── By_Stage (grouped view)
+├── By_Format (grouped by file type)
+├── By_Status (dashboard)
+├── By_Audience (grouped by reader)
+└── Dashboard (summary counts + completion %)
+
+---
+
+### 14.5 Automated File Generation Scripts
+
+#### Python Script — Master Generator
+
+```python
+#!/usr/bin/env python3
+"""
+Venture Studio AI — Deliverables Factory
+Automated file and folder generation script
+Requires: python-docx, openpyxl, python-pptx, 
+          jinja2, pathlib
+Install: pip install python-docx openpyxl 
+         python-pptx jinja2
+"""
+
+import os
+from pathlib import Path
+from docx import Document
+from pptx import Presentation
+from pptx.util import Inches, Pt
+from openpyxl import Workbook
+import json
+
+# ─────────────────────────────────────────
+# CONFIGURATION
+# ─────────────────────────────────────────
+VENTURE_NAME = "VENTURE_NAME"  # Replace with actual name
+BASE_DIR = Path(f"./{VENTURE_NAME}_Studio_Pack")
+
+FOLDER_STRUCTURE = {
+    "00_Executive_Summary": [],
+    "01_Idea_Validation": [],
+    "02_Strategy": [],
+    "03_Business_Case": [],
+    "04_Operating_Model": [],
+    "05_Product": [],
+    "06_Architecture": ["Architecture_Diagrams"],
+    "07_Security_Risk_Compliance": [],
+    "08_Financial_Model": [],
+    "09_Program_Management": [],
+    "10_Document_Library": [
+        "Executive", "Product", "Project",
+        "Security_Compliance", "Operations",
+        "Sales", "Marketing"
+    ],
+    "11_GTM_Strategy": [],
+    "12_Brand_Website": [
+        "Brand", "Website/css", "Website/js",
+        "Website/assets/images", "Website/blog",
+        "Copy", "SEO"
+    ],
+    "13_Technical_Specification": ["Sprint_Plans"],
+    "14_Deliverables_Index": ["File_Generation_Scripts"],
+    "15_Final_Pack": [],
+}
+
+# ─────────────────────────────────────────
+# FOLDER CREATION
+# ─────────────────────────────────────────
+def create_folder_structure():
+    """Create complete folder hierarchy."""
+    BASE_DIR.mkdir(exist_ok=True)
+    for folder, subfolders in FOLDER_STRUCTURE.items():
+        folder_path = BASE_DIR / folder
+        folder_path.mkdir(exist_ok=True)
+        for subfolder in subfolders:
+            (folder_path / subfolder).mkdir(
+                parents=True, exist_ok=True
+            )
+    print(f"✅ Folder structure created: {BASE_DIR}")
+
+# ─────────────────────────────────────────
+# DOCUMENT CREATION
+# ─────────────────────────────────────────
+def create_word_doc(filepath: Path, title: str, 
+                    sections: list):
+    """Create a structured Word document."""
+    doc = Document()
+    
+    # Cover page
+    doc.add_heading(VENTURE_NAME, 0)
+    doc.add_heading(title, 1)
+    doc.add_paragraph(f"Version: 1.0 | Status: Draft")
+    doc.add_page_break()
+    
+    # Document control table
+    doc.add_heading("Document Control", 2)
+    table = doc.add_table(rows=4, cols=2)
+    table.style = 'Table Grid'
+    cells = [
+        ("Document Title", title),
+        ("Version", "1.0"),
+        ("Status", "Draft"),
+        ("Classification", "Confidential"),
+    ]
+    for i, (key, value) in enumerate(cells):
+        table.rows[i].cells[0].text = key
+        table.rows[i].cells[1].text = value
+    doc.add_page_break()
+    
+    # Sections
+    for section in sections:
+        doc.add_heading(section["title"], 
+                        section.get("level", 1))
+        if "content" in section:
+            doc.add_paragraph(section["content"])
+        if "placeholder" in section:
+            p = doc.add_paragraph()
+            p.add_run(
+                f"[{section['placeholder']}]"
+            ).italic = True
+    
+    doc.save(filepath)
+    print(f"  📄 Created: {filepath.name}")
+
+# ─────────────────────────────────────────
+# SPREADSHEET CREATION
+# ─────────────────────────────────────────
+def create_spreadsheet(filepath: Path, title: str,
+                        tabs: list):
+    """Create a structured Excel workbook."""
+    wb = Workbook()
+    
+    # Cover tab
+    ws_cover = wb.active
+    ws_cover.title = "README"
+    ws_cover["A1"] = VENTURE_NAME
+    ws_cover["A2"] = title
+    ws_cover["A3"] = "Version: 1.0"
+    ws_cover["A4"] = "Instructions: [Add instructions here]"
+    
+    # Create tabs
+    for tab in tabs:
+        ws = wb.create_sheet(title=tab["name"])
+        if "headers" in tab:
+            for col, header in enumerate(
+                tab["headers"], 1
+            ):
+                cell = ws.cell(row=1, column=col, 
+                               value=header)
+                cell.font = __import__(
+                    'openpyxl.styles', 
+                    fromlist=['Font']
+                ).Font(bold=True)
+    
+    wb.save(filepath)
+    print(f"  📊 Created: {filepath.name}")
+
+# ─────────────────────────────────────────
+# PRESENTATION CREATION
+# ─────────────────────────────────────────
+def create_presentation(filepath: Path, title: str,
+                         slides: list):
+    """Create a structured PowerPoint presentation."""
+    prs = Presentation()
+    prs.slide_width = Inches(13.33)
+    prs.slide_height = Inches(7.5)
+    
+    # Title slide
+    slide_layout = prs.slide_layouts[0]
+    slide = prs.slides.add_slide(slide_layout)
+    slide.shapes.title.text = title
+    slide.placeholders[1].text = VENTURE_NAME
+    
+    # Content slides
+    for slide_data in slides:
+        layout = prs.slide_layouts[1]
+        slide = prs.slides.add_slide(layout)
+        slide.shapes.title.text = slide_data["title"]
+        if "content" in slide_data:
+            slide.placeholders[1].text = (
+                slide_data["content"]
+            )
+    
+    prs.save(filepath)
+    print(f"  📊 Created: {filepath.name}")
+
+# ─────────────────────────────────────────
+# HTML WEBSITE CREATION
+# ─────────────────────────────────────────
+def create_html_page(filepath: Path, page_data: dict):
+    """Create a structured HTML page."""
+    html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" 
+          content="width=device-width, 
+                   initial-scale=1.0">
+    <meta name="description" 
+          content="{page_data.get('meta_desc', '')}">
+    <title>{page_data.get('title', '')} | {VENTURE_NAME}</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                {VENTURE_NAME}
+            </a>
+            <ul class="nav-links">
+                <li><a href="product.html">Product</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="customers.html">Customers</a></li>
+                <li><a href="contact.html" 
+                       class="btn-nav">Get Started</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <h1>{page_data.get('h1', '[Hero Headline]')}</h1>
+                <p class="hero-sub">
+                    {page_data.get('subheadline', 
+                                   '[Subheadline]')}
+                </p>
+                <div class="cta-group">
+                    <a href="#" class="btn-primary">
+                        {page_data.get('cta_primary', 
+                                       'Get Started')}
+                    </a>
+                    <a href="#" class="btn-secondary">
+                        {page_data.get('cta_secondary', 
+                                       'Learn More')}
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE CONTENT SECTIONS -->
+        {page_data.get('body_content', 
+                       '<!-- Add page sections here -->')}
+    </main>
+
+    <footer id="footer">
+        <div class="container">
+            <p>&copy; 2025 {VENTURE_NAME}. 
+               All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>"""
+    
+    filepath.write_text(html, encoding='utf-8')
+    print(f"  🌐 Created: {filepath.name}")
+
+# ─────────────────────────────────────────
+# CSS CREATION
+# ─────────────────────────────────────────
+def create_css(filepath: Path):
+    """Create base CSS with design tokens."""
+    css = """/* ===================================
+   VENTURE STUDIO — BASE STYLES
+   =================================== */
+
+/* 1. CSS Reset */
+*, *::before, *::after { box-sizing: border-box; }
+body, h1, h2, h3, h4, p, ul, ol { margin: 0; padding: 0; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+
+/* 2. Design Tokens */
+:root {
+    /* Colours — replace with brand palette */
+    --color-primary:    #2D5BE3;
+    --color-secondary:  #1A1A2E;
+    --color-accent:     #00D4AA;
+    --color-text:       #1A1A2E;
+    --color-text-light: #6B7280;
+    --color-bg:         #FFFFFF;
+    --color-bg-alt:     #F8FAFC;
+    --color-border:     #E5E7EB;
+    --color-success:    #10B981;
+    --color-warning:    #F59E0B;
+    --color-error:      #EF4444;
+
+    /* Typography */
+    --font-heading: 'Inter', 'Helvetica Neue', sans-serif;
+    --font-body:    'Inter', 'Helvetica Neue', sans-serif;
+    --font-mono:    'Fira Code', monospace;
+
+    /* Spacing */
+    --space-1: 4px;   --space-2: 8px;
+    --space-3: 12px;  --space-4: 16px;
+    --space-5: 24px;  --space-6: 32px;
+    --space-7: 48px;  --space-8: 64px;
+    --space-9: 96px;  --space-10: 128px;
+
+    /* Sizing */
+    --container-max: 1200px;
+    --border-radius-sm: 4px;
+    --border-radius:    8px;
+    --border-radius-lg: 16px;
+    --border-radius-xl: 24px;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+    --shadow:    0 4px 16px rgba(0,0,0,0.08);
+    --shadow-lg: 0 16px 48px rgba(0,0,0,0.12);
+
+    /* Transitions */
+    --transition: all 0.25s ease;
+}
+
+/* 3. Typography */
+body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-text);
+    background: var(--color-bg);
+}
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); 
+     line-height: 1.1; font-weight: 700; }
+h2 { font-size: clamp(1.5rem, 3vw, 2.5rem); 
+     line-height: 1.2; font-weight: 700; }
+h3 { font-size: clamp(1.25rem, 2vw, 1.75rem); 
+     font-weight: 600; }
+p  { font-size: 1rem; line-height: 1.7; 
+     color: var(--color-text-light); }
+
+/* 4. Layout */
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--space-5);
+}
+.section { padding: var(--space-9) 0; }
+.section-alt { background: var(--color-bg-alt); }
+
+/* 5. Navigation */
+#navbar {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-4) 0;
+}
+.nav-container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--space-5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-logo {
+    font-size: 1.25rem; font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: none;
+}
+.nav-links {
+    display: flex; gap: var(--space-5);
+    align-items: center;
+}
+.nav-links a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+.nav-links a:hover { color: var(--color-primary); }
+
+/* 6. Buttons */
+.btn-primary, .btn-secondary, .btn-nav {
+    display: inline-block;
+    padding: var(--space-3) var(--space-5);
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+.btn-primary {
+    background: var(--color-primary);
+    color: #fff;
+}
+.btn-primary:hover {
+    background: #1a3fc7;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+}
+.btn-secondary {
+    background: transparent;
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+.btn-secondary:hover {
+    background: var(--color-primary);
+    color: #fff;
+}
+.btn-nav {
+    background: var(--color-primary);
+    color: #fff;
+    padding: var(--space-2) var(--space-4);
+    font-size: 0.875rem;
+}
+
+/* 7. Hero Section */
+.hero-section {
+    padding: var(--space-10) 0;
+    background: linear-gradient(
+        135deg, 
+        var(--color-bg) 0%, 
+        var(--color-bg-alt) 100%
+    );
+    text-align: center;
+}
+.hero-section h1 { margin-bottom: var(--space-4); }
+.hero-sub {
+    font-size: 1.25rem;
+    max-width: 640px;
+    margin: 0 auto var(--space-6);
+    color: var(--color-text-light);
+}
+.cta-group {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* 8. Cards */
+.card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+.card:hover {
+    box-shadow: var(--shadow);
+    transform: translateY(-2px);
+}
+
+/* 9. Footer */
+#footer {
+    background: var(--color-secondary);
+    color: rgba(255,255,255,0.7);
+    padding: var(--space-7) 0;
+    text-align: center;
+}
+"""
+    filepath.write_text(css, encoding='utf-8')
+    print(f"  🎨 Created: {filepath.name}")
+
+def create_responsive_css(filepath: Path):
+    """Create responsive CSS breakpoints."""
+    css = """/* ===================================
+   RESPONSIVE STYLES
+   =================================== */
+
+/* Tablet: 768px and below */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .cta-group { flex-direction: column; 
+                 align-items: center; }
+    .container { padding: 0 var(--space-4); }
+}
+
+/* Mobile: 480px and below */
+@media (max-width: 480px) {
+    h1 { font-size: 1.75rem; }
+    h2 { font-size: 1.5rem; }
+    .section { padding: var(--space-7) 0; }
+}
+
+/* Large screens: 1400px and above */
+@media (min-width: 1400px) {
+    :root { --container-max: 1320px; }
+}
+"""
+    filepath.write_text(css, encoding='utf-8')
+    print(f"  🎨 Created: {filepath.name}")
+
+def create_js(filepath: Path):
+    """Create base JavaScript file."""
+    js = """// ===================================
+// VENTURE STUDIO — MAIN JS
+// ===================================
+
+'use strict';
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(
+    anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(
+                this.getAttribute('href')
+            );
+            if (target) {
+                target.scrollIntoView({ 
+                    behavior: 'smooth' 
+                });
+            }
+        });
+    }
+);
+
+// Navbar scroll effect
+window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    if (navbar) {
+        navbar.classList.toggle(
+            'scrolled', window.scrollY > 50
+        );
+    }
+});
+
+// Intersection Observer for animations
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    },
+    { threshold: 0.1 }
+);
+document.querySelectorAll('.animate-on-scroll')
+        .forEach(el => observer.observe(el));
+
+// Form validation (if forms exist)
+const forms = document.querySelectorAll('form');
+forms.forEach(form => {
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Add form handling logic here
+        console.log('Form submitted:', 
+                    new FormData(this));
+    });
+});
+"""
+    filepath.write_text(js, encoding='utf-8')
+    print(f"  ⚡ Created: {filepath.name}")
+
+# ─────────────────────────────────────────
+# README CREATION
+# ─────────────────────────────────────────
+def create_readme(filepath: Path):
+    """Create master README file."""
+    readme = f"""# {VENTURE_NAME} — Venture Studio Pack
+
+## Overview
+This folder contains all deliverables generated by the 
+Venture Studio AI system for **{VENTURE_NAME}**.
+
+## Folder Structure
+| Folder | Contents |
+|--------|----------|
+| 00_Executive_Summary | One-pager, scorecard |
+| 01_Idea_Validation | Market research, SWOT, TAM |
+| 02_Strategy | BMC, pricing, value architecture |
+| 03_Business_Case | Full business case documents |
+| 04_Operating_Model | TOM, org design, RACI |
+| 05_Product | PRD, roadmap, user stories |
+| 06_Architecture | Technical and enterprise architecture |
+| 07_Security_Risk_Compliance | Risk register, DPIA, policies |
+| 08_Financial_Model | 5-year model, unit economics |
+| 09_Program_Management | Charter, RAID, Gantt |
+| 10_Document_Library | All templateM_Strategy | Go-to-market plans |
+| 12_Brand_Website | Website files and brand assets |
+| 13_Technical_Specification | Tech specs, API, sprints |
+| 14_Deliverables_Index | This file + generation scripts |
+| 15_Final_Pack | Investor deck, data room index |
+
+## Quick Start
+1. Open `14_Deliverables_Index/Master_Deliverables_Register.xlsx`
+2. Review all deliverable statuses
+3. Populate placeholder content in each file
+4. Run generation scripts for automated files
+
+## Generation Scripts
+```bash
+# Install dependencies
+pip install python-docx openpyxl python-pptx jinja2
+
+# Generate all files
+python 14_Deliverables_Index/File_Generation_Scripts/generate_all.py
+
+Version History
+Copied
+
+
+Version
+Date
+Author
+Changes
+1.0	{import('datetime').date.today()}	AI Studio	Initial generation
+Classification: CONFIDENTIAL
+© {VENTURE_NAME} {import('datetime').date.today().year}
+"""
+filepath.write_text(readme, encoding='utf-8')
+print(f" 📝 Created: README.md")
+
+─────────────────────────────────────────
+MAIN EXECUTION
+─────────────────────────────────────────
+def main():
+print(f"\n{'='*50}")
+print(f" VENTURE STUDIO — DELIVERABLES FACTORY")
+print(f" Generating: {VENTURE_NAME}")
+print(f"{'='*50}\n")
+# Step 1: Create folder structure
+print("📁 Creating folder structure...")
+create_folder_structure()
+
+# Step 2: Create website files
+print("\n🌐 Generating website files...")
+website_dir = (
+    BASE_DIR / "12_Brand_Website" / "Website"
+)
+pages = [
+    {
+        "file": "index.html",
+        "title": "Home",
+        "meta_desc": f"{VENTURE_NAME} — [Value prop]",
+        "h1": "[Hero Headline — Primary Value Prop]",
+        "subheadline": "[Supporting subheadline]",
+        "cta_primary": "Get Started Free",
+        "cta_secondary": "See How It Works",
+    },
+    {"file": "about.html", "title": "About Us",
+     "h1": "Our Story"},
+    {"file": "product.html", "title": "Product",
+     "h1": "Everything You Need"},
+    {"file": "solutions.html", "title": "Solutions",
+     "h1": "Built for Your Industry"},
+    {"file": "pricing.html", "title": "Pricing",
+     "h1": "Simple, Transparent Pricing"},
+    {"file": "customers.html", "title": "Customers",
+     "h1": "Trusted by Industry Leaders"},
+    {"file": "investors.html", "title": "Investors",
+     "h1": "Invest in the Future"},
+    {"file": "careers.html", "title": "Careers",
+     "h1": "Join Our Mission"},
+    {"file": "contact.html", "title": "Contact",
+     "h1": "Get in Touch"},
+]
+for page in pages:
+    create_html_page(
+        website_dir / page["file"], page
+    )
+
+# Blog index
+create_html_page(
+    website_dir / "blog" / "index.html",
+    {"title": "Blog", "h1": "Insights & Resources"}
+)
+
+# CSS and JS
+create_css(website_dir / "css" / "styles.css")
+create_responsive_css(
+    website_dir / "css" / "responsive.css"
+)
+create_js(website_dir / "js" / "main.js")
+
+# Step 3: Create README
+print("\n📝 Generating README...")
+create_readme(
+    BASE_DIR / "14_Deliverables_Index" / "README.md"
+)
+
+# Step 4: Summary
+total_files = sum(
+    len(files) 
+    for _, _, files in os.walk(BASE_DIR)
+)
+total_folders = sum(
+    len(dirs) 
+    for _, dirs, _ in os.walk(BASE_DIR)
+)
+
+print(f"\n{'='*50}")
+print(f"  ✅ GENERATION COMPLETE")
+print(f"  📁 Folders created: {total_folders}")
+print(f"  📄 Files created:   {total_files}")
+print(f"  📍 Location: {BASE_DIR.absolute()}")
+print(f"{'='*50}\n")
+# Step 1: Create folder structure
+print("📁 Creating folder structure...")
+create_folder_structure()
+
+# Step 2: Create website files
+print("\n🌐 Generating website files...")
+website_dir = (
+    BASE_DIR / "12_Brand_Website" / "Website"
+)
+pages = [
+    {
+        "file": "index.html",
+        "title": "Home",
+        "meta_desc": f"{VENTURE_NAME} — [Value prop]",
+        "h1": "[Hero Headline — Primary Value Prop]",
+        "subheadline": "[Supporting subheadline]",
+        "cta_primary": "Get Started Free",
+        "cta_secondary": "See How It Works",
+    },
+    {"file": "about.html", "title": "About Us",
+     "h1": "Our Story"},
+    {"file": "product.html", "title": "Product",
+     "h1": "Everything You Need"},
+    {"file": "solutions.html", "title": "Solutions",
+     "h1": "Built for Your Industry"},
+    {"file": "pricing.html", "title": "Pricing",
+     "h1": "Simple, Transparent Pricing"},
+    {"file": "customers.html", "title": "Customers",
+     "h1": "Trusted by Industry Leaders"},
+    {"file": "investors.html", "title": "Investors",
+     "h1": "Invest in the Future"},
+    {"file": "careers.html", "title": "Careers",
+     "h1": "Join Our Mission"},
+    {"file": "contact.html", "title": "Contact",
+     "h1": "Get in Touch"},
+]
+for page in pages:
+    create_html_page(
+        website_dir / page["file"], page
+    )
+
+# Blog index
+create_html_page(
+    website_dir / "blog" / "index.html",
+    {"title": "Blog", "h1": "Insights & Resources"}
+)
+
+# CSS and JS
+create_css(website_dir / "css" / "styles.css")
+create_responsive_css(
+    website_dir / "css" / "responsive.css"
+)
+create_js(website_dir / "js" / "main.js")
+
+# Step 3: Create README
+print("\n📝 Generating README...")
+create_readme(
+    BASE_DIR / "14_Deliverables_Index" / "README.md"
+)
+
+# Step 4: Summary
+total_files = sum(
+    len(files) 
+    for _, _, files in os.walk(BASE_DIR)
+)
+total_folders = sum(
+    len(dirs) 
+    for _, dirs, _ in os.walk(BASE_DIR)
+)
+
+print(f"\n{'='*50}")
+print(f"  ✅ GENERATION COMPLETE")
+print(f"  📁 Folders created: {total_folders}")
+print(f"  📄 Files created:   {total_files}")
+print(f"  📍 Location: {BASE_DIR.absolute()}")
+print(f"{'='*50}\n")
+if name == "main":
+main()
+
+---
+
+### 14.6 Per-Deliverable Production Specification
+
+For every deliverable from Stages 1–13, the Deliverables Factory Agent produces the following specification card:
+
+┌─────────────────────────────────────────────────┐
+│ DELIVERABLE CARD │
+├─────────────────────────────────────────────────┤
+│ Name: [Deliverable Name] │
+│ Stage: [Source Stage Number] │
+│ Format: [.pptx / .docx / .xlsx / .html] │
+│ PDF Export: [Yes / No] │
+│ Folder: [/path/to/folder/] │
+│ Filename: [exact_filename.ext] │
+│ Audience: [Who reads/uses this] │
+│ Priority: [P1 Critical / P2 High / P3 Med] │
+│ Owner: [Role responsible] │
+│ Status: [🔴 Not Started] │
+├─────────────────────────────────────────────────┤
+│ CONTENT SPECIFICATION │
+│ [Full outline with section descriptions] │
+├─────────────────────────────────────────────────┤
+│ KEY MESSAGES │
+│ 1. [Primary message] │
+│ 2. [Secondary message] │
+│ 3. [Supporting message] │
+├─────────────────────────────────────────────────┤
+│ GENERATION METHOD │
+│ [Manual / Python script / Template / API] │
+└─────────────────────────────────────────────────┘
+
+---
+
+### 14.7 Website Pages — Full HTML Specification
+
+Each page from Stage 12 is produced as a complete, deployable HTML file. The Deliverables Factory Agent outputs:
+
+| Page | File | Sections | SEO Priority |
+|------|------|----------|--------------|
+| Home | `index.html` | Hero, Social proof, Features, How it works, Testimonials, Pricing preview, CTA | P1 |
+| Product | `product.html` | Features grid, Demo, Integrations, Security | P1 |
+| Pricing | `pricing.html` | Tier cards, Feature comparison, FAQ, CTA | P1 |
+| About | `about.html` | Story, Mission, Team, Values, Press | P2 |
+| Solutions | `solutions.html` | Segment cards, Use cases, ROI | P2 |
+| Customers | `customers.html` | Logos, Case studies, Testimonials | P2 |
+| Blog | `blog/index.html` | Article grid, Categories, Search | P2 |
+| Investors | `investors.html` | Overview, Market, Team, Traction, CTA | P2 |
+| Careers | `careers.html` | Culture, Benefits, Open roles | P3 |
+| Contact | `contact.html` | Form, Map, Social, FAQ | P3 |
+
+---
+
+### 14.8 Article & Blog Post Format
+
+All blog content from Stage 12 is produced as:
+
+FORMAT: .md (primary) → .html (published)
+LOCATION: /12_Brand_Website/Website/blog/
+NAMING: YYYY-MM-DD-slug-url.md
+
+FRONT MATTER (required):
+title: "[Title]"
+slug: "[url-slug]"
+description: "[150 char SEO description]"
+author: "[Author]"
+date: "[YYYY-MM-DD]"
+category: "[Category]"
+tags: ["tag1", "tag2", "tag3"]
+featured_image: "assets/images/[image].jpg"
+reading_time: "[X] min"
+seo_keyword: "[primary keyword]"
+status: "draft"
+
+---
+
+### 14.9 Quality Assurance Checklist
+
+Before any deliverable is marked complete:
+
+DOCUMENT QA:
+☐ Cover page complete (title, version, date, classification)
+☐ Document control table populated
+☐ Table of contents present and accurate
+☐ All placeholders replaced with real content
+☐ Consistent formatting throughout
+☐ Headers use correct hierarchy (H1 → H2 → H3)
+☐ All tables have header rows
+☐ All images have alt text
+☐ Footer present on all pages
+☐ Spell-check completed
+☐ PDF export tested
+
+SPREADSHEET QA:
+☐ README/cover tab present
+☐ All input cells clearly marked (yellow)
+☐ Formulas tested with sample data
+☐ No broken references (#REF!, #N/A)
+☐ Print areas defined
+☐ Filters applied to data tables
+☐ Conditional formatting working
+
+PRESENTATION QA:
+☐ Consistent slide master applied
+☐ No more than 6 bullets per slide
+☐ All charts labelled
+☐ Speaker notes present
+☐ Confidentiality footer on all slides
+☐ Slide numbers present
+☐ Last slide has clear CTA
+
+WEBSITE QA:
+☐ HTML validates (W3C validator)
+☐ All links tested (no 404s)
+☐ Mobile responsive (tested at 375px, 768px, 1200px)
+☐ Meta title and description on every page
+☐ Open Graph tags present
+☐ Images optimised (<200KB)
+☐ Page load speed <3 seconds
+☐ Forms submit correctly
+☐ Accessibility: WCAG 2.1 AA minimum
+☐ Cross-browser tested (Chrome, Firefox, Safari, Edge)
+
+
+---
+
+### 14.10 Integration with Existing Stages
+
+The Deliverables Factory Agent receives outputs from each stage and applies the following transformation pipeline:
+STAGE OUTPUT (Markdown)
+│
+▼
+┌───────────────────┐
+│ Content Parser │ ← Extracts structured content
+└───────────────────┘
+│
+▼
+┌───────────────────┐
+│ Format Selector │ ← Determines correct file format
+└───────────────────┘
+│
+▼
+┌───────────────────┐
+│ Template Engine │ ← Applies brand/style template
+└───────────────────┘
+│
+▼
+┌───────────────────┐
+│ File Generator │ ← Produces the actual file
+└───────────────────┘
+│
+▼
+┌───────────────────┐
+│ QA Checker │ ← Validates against checklist
+└───────────────────┘
+│
+▼
+┌───────────────────┐
+│ Register Update │ ← Logs in Master Register
+└───────────────────┘
+│
+▼
+DELIVERABLE READY ✅
+
+---
+
+> **🟢 Key Insight — Deliverables Factory Agent**
+>
+> The Deliverables Factory Agent is the **execution layer** of the entire Venture Studio system. It transforms analytical outputs into tangible, distributable assets. Every deliverable produced must be immediately usable by its intended audience — whether that is a board member opening a PDF, an investor reviewing a deck, a developer reading an API spec, or a visitor landing on the website. **Format is not cosmetic — it is functional.** A brilliant strategy buried in unformatted text has zero leverage. A well-structured, correctly formatted deliverable multiplies the value of every stage that preceded it.
+>
+> **Recommended Next Step:** Run `generate_all.py` after populating the venture name and brand variables, then systematically populate each file using the content generated in Stages 1–13. Prioritise the **15_Final_Pack** folder first for investor-facing activities.
+
+---
+
+## ════════════════════════════════════════════════════
+## UPDATED AGENT ROSTER (with Stage 14 addition)
+## ════════════════════════════════════════════════════
+
+Add this row to your existing table:
+
+```markdown
+| Deliverables Factory Agent   | File creation, format architecture, folder structure, output packaging, QA |
+
+Integration Notes
+To integrate Stage 14 into your existing prompt:
+
+Insert the agent row into the Agent Roster table after Full-Stack Engineering Agent
+Insert Stage 14 between Stage 13 and the Final Deliverable section
+Update the Final Deliverable section to reference Stage 14 outputs
+Add to Core Directives: "9. Every analytical output must map to a production-ready deliverable in the correct file format via the Deliverables Factory Agent."
+
+
+
